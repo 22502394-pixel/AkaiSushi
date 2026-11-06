@@ -2,12 +2,12 @@
 >terminal
 
 git init (projeto vazio) <br>
-git remote (url do github)
-git branch -M main
+git remote (url do github)  <br>
+git branch -M main  <br>
 
-git status (olha os arquivos alterados)
-git add .
-git commit -m "texto"
+git status (olha os arquivos alterados)  <br>
+git add .  <br>
+git commit -m "texto"  <br>
 
 git push origin main
 
