@@ -1,0 +1,336 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #191919;
+    color: white;
+    font-family: 'Roboto Slab', serif;
+    overflow-x: hidden;
+}
+
+.cardapio {
+    position: relative;
+    padding: 65px 35px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.organização{
+    padding: 30px 5%;
+  }
+
+
+#Cabeçario{
+    background-color: #212121;
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    gap: 18vh;
+    justify-content: space-around;
+    z-index: 99;
+}
+#logo img{
+    width: 120px;
+}
+
+#carrinho img{
+   width: 60px;
+   height: 60px;
+   cursor: pointer;
+   object-fit: cover;
+}
+
+#Cabeçario li{
+   list-style-type: none;
+}
+
+#Cabeçario li:hover{
+    text-decoration: underline #B83B32 solid 2px;
+    color: #B83B32;
+
+    a{
+        color: #B83B32;
+    }
+}
+
+
+#Cabeçario a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: 'Archivo Black', sans-serif;
+    
+}
+
+#Cabeçario svg{
+    background-color: #212121;
+    width: 30px;
+    cursor: pointer;
+    
+}
+
+#Cabeçario button{
+    border: none;
+    border-bottom-style: none;
+    list-style-type: none;
+    background-color: #212121;
+    
+   
+} 
+
+.titulo {
+    position: relative;
+    z-index: 1;
+}
+
+.subtitulo1 {
+    color: #B83B32;
+    font-size: 25px;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.tit1,
+.tit2 {
+    display: inline;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 65px;
+    font-weight: 900;
+}
+
+.tit1 {
+    color: white;
+}
+
+.tit2 {
+    color: #B83B32;
+    margin-left: 10px;
+}
+
+.subtitulo2Indrodução {
+    color: #ADADAD;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+
+form {
+    display: flex;
+    gap: 10px;
+    margin: 25px 0 35px;
+    position: relative;
+    z-index: 1;
+}
+
+form input {
+    flex: 1;
+    height: 45px;
+    background: transparent;
+    border: 1px solid #888;
+    border-radius: 10px;
+    padding: 0 20px;
+    color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+form input::placeholder {
+    color: #ccc;
+}
+
+form input:focus {
+    border-color: #B83B32;
+}
+
+form button {
+    background: #B83B32;
+    border: none;
+    border-radius: 10px;
+    padding: 0 25px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.blocosCardapio {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+    position: relative;
+    z-index: 1;
+    padding: 10px;
+}
+
+.Produto1,
+.Produto2,
+.Produto3,
+.Produto4,
+.Produto5,
+.Produto6,
+.Produto7,
+.Produto8 {
+    background-color: #292929;
+    border: 1px solid #666;
+    border-radius: 12px;
+    padding: 12px;
+    transition: 0.3s;
+    min-width: 0;
+}
+
+.Produto1:hover,
+.Produto2:hover,
+.Produto3:hover,
+.Produto4:hover,
+.Produto5:hover,
+.Produto6:hover,
+.Produto7:hover,
+.Produto8:hover {
+    transform: translateY(-5px);
+    border-color: #B83B32;
+}
+
+.blocosCardapio img {
+    width: 380px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px;
+    
+}
+
+.blocosCardapio h3 {
+    color: white;
+    font-size: 17px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.blocosCardapio p {
+    color: #ddd;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.blocosCardapio p:nth-of-type(2) {
+    color: #B83B32;
+    font-size: 17px;
+    font-weight: bold;
+    margin: 8px 0;
+}
+
+.blocosCardapio button {
+    width: 100%;
+    height: 35px;
+    background-color: #B83B32;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.blocosCardapio button:hover {
+    background-color: #B83B32;
+}
+
+
+@media (max-width: 900PX) {
+    .blocosCardapio {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tit1,
+    .tit2 {
+        font-size: 45px;
+    }
+}
+
+@media (max-width: 550px) {
+    body {
+        padding: 15px;
+    }
+
+    .cardapio {
+        padding: 40px 15px;
+    }
+
+    .tit1,
+    .tit2 {
+        font-size: 29px;
+    }
+
+    .subtitulo1 {
+        font-size: 20px;
+    }
+
+    .subtitulo2Indrodução {
+        font-size: 13px;
+    }
+
+    .blocosCardapio {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 0;
+    }
+
+    .blocosCardapio img {
+        height: 100px;
+    }
+
+    .blocosCardapio h3 {
+        font-size: 14px;
+    }
+}
+
+
+.forma-vermelha{
+    position: absolute;
+    top: -20%;
+    right: -30%;
+    animation: flutuar 3s ease-in-out infinite; 
+    z-index: -1;
+}
+#bola-vermelho{
+    position: absolute;
+    top: 0;
+    right: 0;
+    clip-path: ellipse(90% 105% at 85% 5%);
+    height: 500px;
+    width: 1000px;
+    background-color: #B83B32;
+}
+
+
+
+
+.forma-laranja {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top:110vh;
+    z-index: -1;
+    animation: flutuar 6s ease-in-out infinite;
+}
+
+#bola-laranja {
+    width: 600px;
+    height: 400px;
+    background-color: #FA852A;
+    clip-path: ellipse(80% 100% at 20% 100%);
+    
+}
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(-5px, -12px);
+    }
+
+}
