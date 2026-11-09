@@ -86,3 +86,54 @@ const fileInput = document.getElementById('fileInput');
             inputEmail.focus();
         }
     });
+
+
+
+
+
+
+
+
+
+
+
+    const lerLS = (k, padrao) => {
+        try { return JSON.parse(localStorage.getItem(k)) ?? padrao; } catch { return padrao; }
+      };
+      const gravarLS = (k, v) => localStorage.setItem(k, JSON.stringify(v));
+      const brl = n => n.toFixed(2).replace(".", ",") + " R$";
+      
+      function pegarCarrinho() { return lerLS("carrinho", []); }
+      
+      function atualizarBadge(pulsar) {
+        const badge = document.getElementById("carrinho-badge");
+        if (!badge) return;
+        const total = pegarCarrinho().reduce((s, i) => s + i.qtd, 0);
+        badge.textContent = total;
+        badge.hidden = total === 0;
+        if (pulsar) {
+          badge.classList.remove("pulse");
+          void badge.offsetWidth;
+          badge.classList.add("pulse");
+        }
+      }
+      
+      function toast(msg) {
+        const t = document.createElement("div");
+        t.className = "toast";
+        t.textContent = msg;
+        document.body.appendChild(t);
+        setTimeout(() => t.remove(), 2200);
+      }
+      
+      function baixarJSON(obj, nomeArquivo) {
+        const blob = new Blob([JSON.stringify(obj)], { type: "application/json" });
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = nomeArquivo;
+        a.click();
+        URL.revokeObjectURL(a.href);
+      }
+      
+      document.addEventListener("DOMContentLoaded", () => atualizarBadge(false));
+      
