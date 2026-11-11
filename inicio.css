@@ -1027,6 +1027,7 @@ body {
     justify-content: space-around;
     padding: 25px 40px;
     font-family: sans-serif;
+    height: 300px;
   }
   
   .beneficio {
