@@ -328,7 +328,7 @@ body.claro {
 
 .forma-laranja {
   position: absolute;
-  bottom: 0;
+  bottom: -15px;
   left: 0;
   z-index: -1;
   animation: flutuar 6s ease-in-out infinite;
